@@ -45,11 +45,20 @@
       applyTheme();
       window.matchMedia(DARK_PREFERENCE).addEventListener("change", applyTheme);
     });
+
+
+      /**
+   * @type {'small' | 'medium' | 'large'} How large should the button be?
+   */
+  export let size = 'medium';
+  
   </script>
   
   <label class="themeToggle" title="Toggle Theme">
     <input
       type="checkbox"
+      class={["svelte-toggle", `svelte-toggle--${size}`, ].join(' ')}
+    
       checked={currentTheme !== THEMES.LIGHT}
       on:click={toggleTheme}
     />
@@ -61,4 +70,28 @@
     span {
       display: none;
     }
+
+    .svelte-toggle {
+        cursor: pointer;
+    }
+
+/* --------- Primary OR Secondary ---------- */
+
+
+/* --------- Sizes --------- */
+.svelte-toggle--small {
+    height: 15;
+    width: 15px;
+    margin: 5px;
+}
+.svelte-toggle--medium {
+    height: 25px;
+    width: 25px;
+    margin: 5px;
+}
+.svelte-toggle--large {
+    height: 35px;
+    width: 35px;
+    margin: 5px;
+}
   </style>
