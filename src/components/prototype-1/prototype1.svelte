@@ -21,15 +21,17 @@
     export let unCheckedLabel;
     // Checked / dark
     export let checkedLabel;
-    // Unchecked Theme
+    // Unchecked ThemeCLEAR
+    
     export let unCheckedTheme;
     // Unchecked Theme
     export let checkedTheme;
+
+
 </script>
 
 <main>
     <h1>Theme: {$theme}</h1>
-
     <!-- Using .set alerts any subscibers (such as those in the store.js) of any changes -->
     <div class="toggle-switch">
 
@@ -40,6 +42,7 @@
         <button class={unCheckedTheme}
             on:click={() => theme.set('light')}
             on:click={toggle}
+            on:click
             >
             {unCheckedLabel}
         </button>
@@ -49,6 +52,7 @@
         <button class={checkedTheme}
             on:click={() => theme.set('dark')}
             on:click={toggle}
+            on:click
             >
             {checkedLabel}
         </button>
@@ -79,6 +83,21 @@ button:hover {
 
 .greenTheme {
     background-color: rgb(22, 189, 22);
+}
+
+
+/* Size Options */
+.toggle-button--small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+.toggle-button--medium {
+  font-size: 14px;
+  padding: 11px 20px;
+}
+.toggle-button--large {
+  font-size: 16px;
+  padding: 12px 24px;
 }
 
 </style>

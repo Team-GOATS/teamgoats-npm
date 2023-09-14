@@ -14,9 +14,10 @@ export const Primary = {
         unCheckedLabel: 'unChecked',
         checkedLabel: "checked",
         unCheckedTheme: "pinkTheme",
-        checkedTheme: "redTheme"
+        checkedTheme: "redTheme",
+        size: {
+            control: {type: 'select'},
+            options: ['small', 'medium', 'large']
+        }
     }
 }
-
-
-
